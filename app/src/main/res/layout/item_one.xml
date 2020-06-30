@@ -7,7 +7,7 @@
      <variable
          name="student"
          type="com.cass.livedataviewmodeldatabinding.bean.Student" />
-        <import type="com.cass.livedataviewmodeldatabinding.model.StudentModel"/>
+        <import type="com.cass.livedataviewmodeldatabinding.event.EventHandler"/>
     </data>
 
     <LinearLayout
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:orientation="vertical"
-        android:onClick="@{()->StudentModel.changeItem(student)}"
+        android:onClick="@{()->EventHandler.changeItem(student)}"
         >
 
         <ImageView

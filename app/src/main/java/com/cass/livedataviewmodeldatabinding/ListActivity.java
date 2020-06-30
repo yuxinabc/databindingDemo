@@ -1,16 +1,13 @@
 package com.cass.livedataviewmodeldatabinding;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModelProvider;
-
-import android.os.Bundle;
 
 import com.cass.livedataviewmodeldatabinding.adapter.MyAdapter;
 import com.cass.livedataviewmodeldatabinding.bean.Student;
 import com.cass.livedataviewmodeldatabinding.databinding.ActivityListBinding;
-import com.cass.livedataviewmodeldatabinding.model.StudentModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +21,6 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=DataBindingUtil.setContentView(this,R.layout.activity_list);
-        StudentModel studentModel= ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(StudentModel.class);
         List<Student> students=new ArrayList<>();
         for(int i=0;i<60;i++){
             Student student=new Student("aaa"+i,i*2);

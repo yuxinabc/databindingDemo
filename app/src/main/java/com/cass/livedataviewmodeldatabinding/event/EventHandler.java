@@ -1,6 +1,6 @@
-package com.cass.livedataviewmodeldatabinding.model;
+package com.cass.livedataviewmodeldatabinding.event;
 import android.view.View;
-import androidx.lifecycle.ViewModel;
+
 import com.cass.livedataviewmodeldatabinding.bean.Student;
 
 
@@ -11,7 +11,7 @@ import com.cass.livedataviewmodeldatabinding.bean.Student;
  * @CreateDate: 2020/6/29 11:47 AM
  * @Version: 1.0.0
  */
-public class StudentModel extends ViewModel {
+public class EventHandler{
     public static void change(View view,Student student){
         if(view!=null){
             student.setAge((int) (Math.random()*100+6));

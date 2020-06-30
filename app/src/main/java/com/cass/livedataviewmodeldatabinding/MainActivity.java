@@ -1,14 +1,13 @@
 package com.cass.livedataviewmodeldatabinding;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.cass.livedataviewmodeldatabinding.bean.Student;
 import com.cass.livedataviewmodeldatabinding.databinding.ActivityMainBinding;

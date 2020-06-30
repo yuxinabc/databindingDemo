@@ -3,6 +3,7 @@ package com.cass.livedataviewmodeldatabinding.bindingAdapter;
 import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.BindingMethod;
 import androidx.databinding.BindingMethods;
@@ -24,11 +25,9 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
  * @CreateDate: 2020/6/29 10:14 AM
  * @Version: 1.0.0
  */
-@BindingMethods(
-        value = {
-            @BindingMethod(type = com.cass.livedataviewmodeldatabinding.view.MyTextView.class, attribute = "app:color", method = "setColorHH")
-        }
-)
+@BindingMethods({
+    @BindingMethod(type =MyTextView.class, attribute = "app:textColor", method = "setColorHH")
+})
 public class ViewBinding {
     @BindingAdapter(value = {"imageUrl", "isCircle", "radius"}, requireAll = false)
     public static void setImage(ImageView view, String imageUrl, boolean isCircle, int radius) {
@@ -45,6 +44,7 @@ public class ViewBinding {
         builder.into(view);
 
     }
+
     @BindingAdapter("text")
     public static void setText(MyTextView view, String newValue) {
         // Important to break potential infinite loops.
