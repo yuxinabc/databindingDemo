@@ -5,6 +5,9 @@
 
     <data>
         <variable
+            name="isError"
+            type="Boolean" />
+        <variable
             name="student"
             type="com.cass.livedataviewmodeldatabinding.bean.Student" />
         <import type="com.cass.livedataviewmodeldatabinding.event.EventHandler" />
@@ -15,6 +18,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
+        <View
+            android:background="@{isError ? @color/red : @color/white}"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,7 +31,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{Integer.toString(student.age)}" />
+            android:textColor='@{"红色"}'
+            android:textSize="18dp"
+            android:text="@{student.age}" />
 
         <EditText
             android:id="@+id/etText"

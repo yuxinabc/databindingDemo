@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Student student = new Student("BBB", 11);
         student.setUrl("http://ww4.sinaimg.cn/bmiddle/6910ab7bgw1egloghsfi3j20b40b40t6.jpg");
         binding.setVariable(BR.student,student);
+        binding.setIsError(true);
         binding.btGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,10 +1,13 @@
 package com.cass.livedataviewmodeldatabinding.bindingAdapter;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
+import androidx.databinding.BindingConversion;
 import androidx.databinding.BindingMethod;
 import androidx.databinding.BindingMethods;
 import androidx.databinding.InverseBindingAdapter;
@@ -45,6 +48,25 @@ public class ViewBinding {
 
     }
 
+
+    @BindingAdapter(value = {"android:text"})
+    public static void setText(TextView textView,int age){
+        textView.setText(String.valueOf(age));
+    }
+    @BindingConversion
+    public static int convertStringToColor(String str) {
+        if (str.equals("红色")) {
+            return Color.parseColor("#FF4081");
+        }
+
+        if (str.equals("蓝色")) {
+            return Color.parseColor("#3F51B5");
+        }
+        return Color.parseColor("#344567");
+    }
+
+
+ /**---------------------自定义view,实现双向绑定--------------------**/
     @BindingAdapter("text")
     public static void setText(MyTextView view, String newValue) {
         // Important to break potential infinite loops.
