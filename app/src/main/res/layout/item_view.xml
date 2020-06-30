@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="lines"
+            type="Integer" />
+
+        <variable
+            name="student"
+            type="com.cass.livedataviewmodeldatabinding.bean.Student" />
+        <import type="android.view.View"/>
+    </data>
+    <!--使用include，根布局不能使用merge-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:visibility="@{student.showName?View.VISIBLE:View.GONE}"
+            android:maxLines="@{lines}"
+            android:text="@{student.name}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(student.age)}" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

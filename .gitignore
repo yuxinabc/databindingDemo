@@ -83,3 +83,7 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+/app/src/androidTest/java/com/cass/livedataviewmodeldatabinding/
+/app/src/test/java/com/cass/livedataviewmodeldatabinding/
+/.idea/
+/gradle/wrapper/

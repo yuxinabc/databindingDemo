@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="student"
+            type="com.cass.livedataviewmodeldatabinding.bean.Student" />
+        <import type="com.cass.livedataviewmodeldatabinding.model.StudentModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{student.name,default="hehehe"}' />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(student.age)}" />
+        <EditText
+            android:id="@+id/etText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={student.name}"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            app:imageUrl="@{student.url}"/>
+        <include
+            layout="@layout/item_view"
+            app:lines="@{3}"
+            app:student="@{student}"
+           />
+        <com.cass.livedataviewmodeldatabinding.view.MyTextView
+            android:id="@+id/tvText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:text="@={student.name}"
+            app:color="@color/colorPrimary"/>
+        <Button
+            android:onClick="@{(view) -> StudentModel.change(view,student)}"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="改变属性"/>
+        <Button
+            android:id="@+id/btGo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="去列表页面"/>
+    </LinearLayout>
+</layout>
