@@ -25,13 +25,14 @@ public class Student extends BaseObservable{
     public void setType(int type) {
         this.type = type;
     }
-
+    @Bindable
     public boolean isShowName() {
         return showName;
     }
 
     public void setShowName(boolean showName) {
         this.showName = showName;
+        notifyPropertyChanged(BR.showName);
     }
 
     public String getUrl() {
