@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="isError"
             type="Boolean" />
+
         <variable
             name="student"
             type="com.cass.livedataviewmodeldatabinding.bean.Student" />
+
         <import type="com.cass.livedataviewmodeldatabinding.event.EventHandler" />
+        <import type="com.cass.livedataviewmodeldatabinding.adapter.ViewHandler"/>
     </data>
 
     <LinearLayout
@@ -18,55 +22,93 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
+
         <View
-            android:background="@{isError ? @color/red : @color/white}"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text='@{student.name,default="hehehe"}'/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor='@{"红色"}'
-            android:textSize="18dp"
-            android:text="@{student.age}" />
-
-        <EditText
-            android:id="@+id/etText"
+            android:layout_height="50dp"
+            android:background="@{isError ? @color/red : @color/white}" />
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@={student.name}" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text='@{student.name,default="hehehe"}' />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="age: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{student.age}"
+                android:textColor='@{"红色"}'
+                android:textSize="18dp" />
+        </LinearLayout>
 
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="name: "/>
+           <EditText
+               android:id="@+id/etText"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="@={student.name}" />
+       </LinearLayout>
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
             app:imageUrl="@{student.url}"
-            app:isCircle="@{true}"
-            app:radius="@{50}"/>
+            app:isCircle="@{student.circle}"
+            app:radius="@{10}" />
 
         <include
             layout="@layout/item_view"
             app:lines="@{3}"
             app:student="@{student}" />
-
-        <com.cass.livedataviewmodeldatabinding.view.MyTextView
-            android:id="@+id/tvText"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:text="@={student.name}"
-            app:textColor="@{@color/colorPrimary}" />
-
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name: "/>
+            <com.cass.livedataviewmodeldatabinding.view.MyTextView
+                android:id="@+id/tvText"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:background="@color/red"
+                app:text="@={student.name}"
+                app:textColor="@{@color/colorPrimary}" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{ViewHandler.show(student)}"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             android:onClick="@{(view) -> EventHandler.change(view,student)}"
             android:text="改变属性" />
-
+        <Button
+            android:id="@+id/btChangeUrl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{(view) -> EventHandler.changeUrl(view,student)}"
+            android:text="改变图片" />
         <Button
             android:id="@+id/btGo"
             android:layout_width="match_parent"

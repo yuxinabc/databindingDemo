@@ -1,5 +1,7 @@
 package com.cass.livedataviewmodeldatabinding.bean;
 
+import android.util.Log;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import com.cass.livedataviewmodeldatabinding.BR;
@@ -17,6 +19,19 @@ public class Student extends BaseObservable{
     private String url;
     private boolean showName;
     private int type;
+    private boolean circle=true;
+   @Bindable
+    public boolean isCircle() {
+        return circle;
+    }
+
+    public void setCircle(boolean circle) {
+        this.circle = circle;
+        notifyPropertyChanged(BR.circle);
+    }
+
+    @Bindable
+
 
     public int getType() {
         return type;
@@ -34,13 +49,13 @@ public class Student extends BaseObservable{
         this.showName = showName;
         notifyPropertyChanged(BR.showName);
     }
-
+    @Bindable
     public String getUrl() {
         return url;
     }
-
     public void setUrl(String url) {
         this.url = url;
+        notifyPropertyChanged(BR.url);
     }
 
     public Student(String name, int age) {
@@ -55,6 +70,7 @@ public class Student extends BaseObservable{
     public void setName(String name) {
         this.name = name;
         notifyPropertyChanged(BR.name);
+        System.out.println("姓名"+this.name);
     }
     @Bindable
     public int getAge() {

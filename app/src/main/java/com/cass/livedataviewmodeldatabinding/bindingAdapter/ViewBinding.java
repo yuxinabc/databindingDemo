@@ -32,7 +32,7 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
     @BindingMethod(type =MyTextView.class, attribute = "app:textColor", method = "setColorHH")
 })
 public class ViewBinding {
-    @BindingAdapter(value = {"imageUrl", "isCircle", "radius"}, requireAll = false)
+    @BindingAdapter(value = {"app:imageUrl", "app:isCircle", "app:radius"}, requireAll = false)
     public static void setImage(ImageView view, String imageUrl, boolean isCircle, int radius) {
         RequestBuilder<Drawable> builder = Glide.with(view).load(imageUrl);
         if (isCircle) {

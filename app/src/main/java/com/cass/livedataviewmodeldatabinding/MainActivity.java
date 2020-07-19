@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         final ActivityMainBinding binding=DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setLifecycleOwner(this);
-        Student student = new Student("BBB", 11);
+        final Student student = new Student("BBB", 18);
         student.setUrl("http://ww4.sinaimg.cn/bmiddle/6910ab7bgw1egloghsfi3j20b40b40t6.jpg");
         binding.setVariable(BR.student,student);
         binding.setIsError(true);
