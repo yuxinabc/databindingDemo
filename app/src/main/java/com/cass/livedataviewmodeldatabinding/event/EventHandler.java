@@ -1,7 +1,13 @@
 package com.cass.livedataviewmodeldatabinding.event;
 import android.view.View;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Transformations;
+
 import com.cass.livedataviewmodeldatabinding.bean.Student;
+import com.cass.livedataviewmodeldatabinding.bean.User;
+import com.cass.livedataviewmodeldatabinding.model.UserViewModel;
 
 
 /**
@@ -26,6 +32,18 @@ public class EventHandler{
         }
     }
     public static void changeItem(Student student){
+        student.setAge((int) (Math.random()*100+6));
+        student.setName("aaaaaa"+(int) (Math.random()*100+6));
+    }
+    public static void changeUserName(UserViewModel model){
+        MutableLiveData<User> userLiveData = model.getUserLiveData();
+        User value = userLiveData.getValue();
+        value.setName("changeUserName");
+        userLiveData.postValue(value);
+
+        model.getName().setValue("changeUserName");
+    }
+    public static void changeUserItem(User student){
         student.setAge((int) (Math.random()*100+6));
         student.setName("aaaaaa"+(int) (Math.random()*100+6));
     }

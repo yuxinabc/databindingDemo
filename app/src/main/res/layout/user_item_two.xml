@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="student"
+            type="com.cass.livedataviewmodeldatabinding.bean.User" />
+        <import type="com.cass.livedataviewmodeldatabinding.event.EventHandler"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:orientation="horizontal"
+        android:onClick="@{()->EventHandler.changeUserItem(student)}"
+        >
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:imageUrl="@{student.url}"
+            android:layout_marginLeft="15dp"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{student.name}"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="40dp"
+            tools:text="aaaaaa" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(student.age)}"
+            tools:text="bbbbbbbb" />
+    </LinearLayout>
+</layout>

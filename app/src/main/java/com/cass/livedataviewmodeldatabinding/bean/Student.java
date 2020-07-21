@@ -30,9 +30,6 @@ public class Student extends BaseObservable{
         notifyPropertyChanged(BR.circle);
     }
 
-    @Bindable
-
-
     public int getType() {
         return type;
     }

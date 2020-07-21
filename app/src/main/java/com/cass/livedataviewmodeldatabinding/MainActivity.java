@@ -46,5 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        binding.btLiveData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,LiveDataViewModelActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
