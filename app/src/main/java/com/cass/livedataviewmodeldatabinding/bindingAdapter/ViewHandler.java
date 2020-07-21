@@ -1,12 +1,7 @@
-package com.cass.livedataviewmodeldatabinding.adapter;
-
-import android.database.Observable;
+package com.cass.livedataviewmodeldatabinding.bindingAdapter;
 import android.os.Handler;
 import android.os.Looper;
-
-import androidx.databinding.Bindable;
 import androidx.databinding.ObservableField;
-
 import com.cass.livedataviewmodeldatabinding.bean.Student;
 
 /**

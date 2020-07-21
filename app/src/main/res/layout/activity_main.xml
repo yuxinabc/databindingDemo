@@ -14,7 +14,7 @@
             type="com.cass.livedataviewmodeldatabinding.bean.Student" />
 
         <import type="com.cass.livedataviewmodeldatabinding.event.EventHandler" />
-        <import type="com.cass.livedataviewmodeldatabinding.adapter.ViewHandler"/>
+        <import type="com.cass.livedataviewmodeldatabinding.bindingAdapter.ViewHandler"/>
     </data>
 
     <LinearLayout
