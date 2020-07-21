@@ -1,6 +1,11 @@
 package com.cass.livedataviewmodeldatabinding.adapter;
 
+import android.database.Observable;
+import android.os.Handler;
+import android.os.Looper;
+
 import androidx.databinding.Bindable;
+import androidx.databinding.ObservableField;
 
 import com.cass.livedataviewmodeldatabinding.bean.Student;
 
@@ -12,7 +17,18 @@ import com.cass.livedataviewmodeldatabinding.bean.Student;
  * @Version: 1.0.0
  */
 public class ViewHandler {
-    public static String show(Student student){
-        return "姓名： "+student.getName()+"  年龄： "+student.getAge();
+    public static ObservableField<String> show(Student student){
+        final ObservableField<String> stringObservableField = new ObservableField<>(("姓名： " + student.getName() + "  年龄： " + student.getAge()));
+        notifyChange(stringObservableField);
+        return stringObservableField ;
+    }
+
+    private static void notifyChange(final ObservableField<String> stringObservableField) {
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                stringObservableField.notifyChange();
+            }
+        });
     }
 }
