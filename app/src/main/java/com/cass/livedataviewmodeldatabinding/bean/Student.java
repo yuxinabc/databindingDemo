@@ -8,10 +8,6 @@ import com.cass.livedataviewmodeldatabinding.BR;
 
 /**
  * @Description:可观察对象  可观察字段 ObservableBoolean  可观察集合 ObservableArrayMap、ObservableArrayList
- * @Author: SYX
- * @Copyright: cassInfo
- * @CreateDate: 2020/6/28 10:44 PM
- * @Version: 1.0.0
  */
 public class Student extends BaseObservable{
     private String name;

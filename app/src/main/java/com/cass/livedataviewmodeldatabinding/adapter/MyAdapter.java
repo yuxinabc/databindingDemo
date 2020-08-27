@@ -15,13 +15,7 @@ import com.cass.livedataviewmodeldatabinding.bean.Student;
 
 import java.util.List;
 
-/**
- * @Description:
- * @Author: SYX
- * @Copyright: cassInfo
- * @CreateDate: 2020/6/30 1:59 PM
- * @Version: 1.0.0
- */
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
    private ViewDataBinding binding;
    private List<Student> list;

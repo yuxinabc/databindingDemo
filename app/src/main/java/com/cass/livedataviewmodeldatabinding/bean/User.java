@@ -5,13 +5,7 @@ import androidx.databinding.Bindable;
 
 import com.cass.livedataviewmodeldatabinding.BR;
 
-/**
- * @Description:
- * @Author: SYX
- * @Copyright: cassInfo
- * @CreateDate: 2020/7/21 10:32 AM
- * @Version: 1.0.0
- */
+
 public class User extends BaseObservable {
     private String name;
     private String passWord;

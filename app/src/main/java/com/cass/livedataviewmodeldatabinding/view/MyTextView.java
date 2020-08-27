@@ -17,13 +17,6 @@ import androidx.databinding.InverseBindingListener;
 
 import com.cass.livedataviewmodeldatabinding.R;
 
-/**
- * @Description:
- * @Author: SYX
- * @Copyright: cassInfo
- * @CreateDate: 2020/6/30 11:09 AM
- * @Version: 1.0.0
- */
 public class MyTextView extends View {
     private Paint mPaint;
     private String text;

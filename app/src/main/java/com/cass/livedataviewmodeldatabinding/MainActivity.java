@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.cass.livedataviewmodeldatabinding.bean.Student;
 import com.cass.livedataviewmodeldatabinding.databinding.ActivityMainBinding;
+import com.cass.livedataviewmodeldatabinding.kotlin.KotlinMainActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,LiveDataViewModelActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.btKotlin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, KotlinMainActivity.class);
                 startActivity(intent);
             }
         });

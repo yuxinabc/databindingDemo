@@ -25,3 +25,15 @@ public class LiveDataViewModelActivity extends AppCompatActivity {
         binding.rlv.setAdapter(userAdapter);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

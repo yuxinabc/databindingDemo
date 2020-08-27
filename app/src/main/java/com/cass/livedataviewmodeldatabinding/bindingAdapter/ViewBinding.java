@@ -21,13 +21,7 @@ import com.cass.livedataviewmodeldatabinding.view.MyTextView;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
-/**
- * @Description:
- * @Author: SYX
- * @Copyright: cassInfo
- * @CreateDate: 2020/6/29 10:14 AM
- * @Version: 1.0.0
- */
+
 @BindingMethods({
     @BindingMethod(type =MyTextView.class, attribute = "app:textColor", method = "setColorHH")
 })

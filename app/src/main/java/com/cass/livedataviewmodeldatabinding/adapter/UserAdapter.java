@@ -19,13 +19,7 @@ import com.cass.livedataviewmodeldatabinding.bean.User;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @Description:
- * @Author: SYX
- * @Copyright: cassInfo
- * @CreateDate: 2020/6/30 1:59 PM
- * @Version: 1.0.0
- */
+
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder>{
    private ViewDataBinding binding;
    private ArrayList<User> list;

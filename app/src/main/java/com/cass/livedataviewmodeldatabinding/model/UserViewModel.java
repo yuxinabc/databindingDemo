@@ -9,13 +9,7 @@ import com.cass.livedataviewmodeldatabinding.bean.User;
 
 import java.util.ArrayList;
 
-/**
- * @Description:
- * @Author: SYX
- * @Copyright: cassInfo
- * @CreateDate: 2020/7/21 10:32 AM
- * @Version: 1.0.0
- */
+
 public class UserViewModel extends AndroidViewModel {
     private MutableLiveData<User> userLiveData;
     private MutableLiveData<String> name;

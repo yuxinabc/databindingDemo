@@ -10,13 +10,7 @@ import com.cass.livedataviewmodeldatabinding.bean.User;
 import com.cass.livedataviewmodeldatabinding.model.UserViewModel;
 
 
-/**
- * @Description:
- * @Author: SYX
- * @Copyright: cassInfo
- * @CreateDate: 2020/6/29 11:47 AM
- * @Version: 1.0.0
- */
+
 public class EventHandler{
     public static void change(View view,Student student){
         if(view!=null){
